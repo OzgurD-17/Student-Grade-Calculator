@@ -1,20 +1,3 @@
-/****************************************************************************************
-**
-**
-**                       SAKARYA ÜNÝVERSÝTESÝ                                 
-**              BÝLGÝSAYAR VE BÝLÝÞÝM BÝLÝMLERÝ FAKÜLTESÝ                    
-**                   BÝLGÝSAYAR MÜHENDÝSLÝÐÝ BÖLÜMÜ                          
-**                      PROGRAMLAMAYA GÝRÝÞ DERSÝ                             
-**                                                                       
-**           ÖDEV NUMARASI    : 1                                     
-**           ÖÐRENCÝ ADI      : Özgür Demir                         
-**           ÖÐRENCÝ NUMARASI : b221210017                       
-**           DERS GRUBU       : C                                     
-**  
-**                                                                      
-*****************************************************************************************/
-
-
 #include <iostream>
 #include <locale.h>
 #include <math.h>
@@ -32,7 +15,7 @@ struct ogrenciler
     float finalNot = 0;
 };
 
-// 6 farklý notu yüzdesel aralýklarýna göre rastgele oluþturan fonksiyon
+// 6 farklÄ± notu yÃ¼zdesel aralÄ±klarÄ±na gÃ¶re rastgele oluÅŸturan fonksiyon
 int rastgeleNotlar();
 
 
@@ -58,27 +41,27 @@ int main()
 
 
     int ogrenciSayisi;
-    while (true)               //**** Öðrenci sayýsýný alan döngü ****//
+    while (true)               //**** Ã–ÄŸrenci sayÄ±sÄ±nÄ± alan dÃ¶ngÃ¼ ****//
     {
-        cout << "Öðrenci sayýsýný giriniz (max 50 öðrenci): \n";
+        cout << "Ã–ÄŸrenci sayÄ±sÄ±nÄ± giriniz (max 50 Ã¶ÄŸrenci): \n";
         cin >> ogrenciSayisi;
         if (ogrenciSayisi > 0)
             break;                              
         else
-            cout << "Hatalý öðrenci sayýsý giriþi, lütfen tekrar deneyiniz.\n";
+            cout << "HatalÄ± Ã¶ÄŸrenci sayÄ±sÄ± giriÅŸi, lÃ¼tfen tekrar deneyiniz.\n";
     }
     
     float quizNotAgirligi = 0, odevNotAgirligi = 0, vizeNotAgirligi = 0, finalNotAgirligi = 0, yilIciNotlarinagirligi = 0;
 
-    while (true)   //**** Sýnavlarýn not aðýrlýklarýný alan döngü ****//
+    while (true)   //**** SÄ±navlarÄ±n not aÄŸÄ±rlÄ±klarÄ±nÄ± alan dÃ¶ngÃ¼ ****//
     {
         while (true)
         {
-            cout << "Kýsa sýnavlarýn(toplam 2 adet) not yüzdesine etkisini giriniz (1-100): \n";
+            cout << "KÄ±sa sÄ±navlarÄ±n(toplam 2 adet) not yÃ¼zdesine etkisini giriniz (1-100): \n";
             cin >> quizNotAgirligi;
             if (quizNotAgirligi > 100 || quizNotAgirligi < 0)
             {
-                cout << "Hatalý tuþlama tekrar deneyiniz.\n";
+                cout << "HatalÄ± tuÅŸlama tekrar deneyiniz.\n";
             }
             else
                 break;
@@ -86,11 +69,11 @@ int main()
  
         while (true)
         {
-            cout << "Ödev notlarýnýn(toplam 2 adet) not yüzdesine etkisini giriniz (1-100): \n";
+            cout << "Ã–dev notlarÄ±nÄ±n(toplam 2 adet) not yÃ¼zdesine etkisini giriniz (1-100): \n";
             cin >> odevNotAgirligi;
             if (odevNotAgirligi > 100 || odevNotAgirligi < 0)
             {
-                cout << "Hatalý tuþlama tekrar deneyiniz.\n";
+                cout << "HatalÄ± tuÅŸlama tekrar deneyiniz.\n";
             }
             else
                 break;
@@ -99,12 +82,12 @@ int main()
 
         if (quizNotAgirligi + odevNotAgirligi > 100)
         {
-            cout << "\'Quiz Not Aðýrlýðý\' ve \'Ödev Not Aðýrlýðý\' toplamý \'100\''den fazla olmamalýdýr lütfen deðerleri tekrar giriniz\n ";
+            cout << "\'Quiz Not AÄŸÄ±rlÄ±ÄŸÄ±\' ve \'Ã–dev Not AÄŸÄ±rlÄ±ÄŸÄ±\' toplamÄ± \'100\''den fazla olmamalÄ±dÄ±r lÃ¼tfen deÄŸerleri tekrar giriniz\n ";
         }
         if (quizNotAgirligi + odevNotAgirligi == 100)
         {
             vizeNotAgirligi = 0;
-            cout << "Girdiðiniz deðerlere göre Vize Not Aðýrlýðý \'0\' olarak belirlenmiþtir\n";
+            cout << "GirdiÄŸiniz deÄŸerlere gÃ¶re Vize Not AÄŸÄ±rlÄ±ÄŸÄ± \'0\' olarak belirlenmiÅŸtir\n";
             break;
         }
         else
@@ -112,22 +95,22 @@ int main()
             cout << endl;
             cout << endl;
 
-            cout << "Vize notunun not yüzdesine etkisi girdiðiniz verilere göre otomatik olarak belirlenmiþtir.";
+            cout << "Vize notunun not yÃ¼zdesine etkisi girdiÄŸiniz verilere gÃ¶re otomatik olarak belirlenmiÅŸtir.";
             vizeNotAgirligi = 100 - (quizNotAgirligi * 2 + odevNotAgirligi * 2);
-            cout << "Otomatik belirlenen vize yüzde etkisi: " << vizeNotAgirligi << endl;
+            cout << "Otomatik belirlenen vize yÃ¼zde etkisi: " << vizeNotAgirligi << endl;
 
             break;
 
         }
     }
     
-    while (true)     //**** Final sýnavýnýn not aðýrlýðýný alan döngü ****//
+    while (true)     //**** Final sÄ±navÄ±nÄ±n not aÄŸÄ±rlÄ±ÄŸÄ±nÄ± alan dÃ¶ngÃ¼ ****//
     {
-        cout << "Final sýnavýnýn not yüzdesine etkisini giriniz (1-100): \n";
+        cout << "Final sÄ±navÄ±nÄ±n not yÃ¼zdesine etkisini giriniz (1-100): \n";
         cin >> finalNotAgirligi;
         if (finalNotAgirligi > 100 || finalNotAgirligi < 0)
         {
-            cout << "Hatalý tuþlama tekrar deneyiniz.\n";
+            cout << "HatalÄ± tuÅŸlama tekrar deneyiniz.\n";
         }
         else
             break;
@@ -136,38 +119,38 @@ int main()
     cout << endl;
     cout << endl;
     cout << endl;
-    // Yýl içi notlarýn aðýrlýðý belirlendi
-    cout << "Yýl içi notlarýn not yüzdesine etkisi girdiðiniz final not aðýrlýðýna göre otomatik olarak belirlenmiþtir.";
+    // YÄ±l iÃ§i notlarÄ±n aÄŸÄ±rlÄ±ÄŸÄ± belirlendi
+    cout << "YÄ±l iÃ§i notlarÄ±n not yÃ¼zdesine etkisi girdiÄŸiniz final not aÄŸÄ±rlÄ±ÄŸÄ±na gÃ¶re otomatik olarak belirlenmiÅŸtir.";
     yilIciNotlarinagirligi = 100 - finalNotAgirligi;
-    cout << "Otomatik belirlenen yýl içi notlarýn yýlsonu not ortalamasýna etkisi: " << yilIciNotlarinagirligi << endl;
+    cout << "Otomatik belirlenen yÄ±l iÃ§i notlarÄ±n yÄ±lsonu not ortalamasÄ±na etkisi: " << yilIciNotlarinagirligi << endl;
     cout << endl;
     cout << endl;
 
     if (yilIciNotlarinagirligi > 100 || yilIciNotlarinagirligi < 0)
     {
-        cout << "Hatalý tuþlama... (Bir yerlerde hata yaptýn ama nerede? Lütfen tekrar dene...)\n";
+        cout << "HatalÄ± tuÅŸlama... (Bir yerlerde hata yaptÄ±n ama nerede? LÃ¼tfen tekrar dene...)\n";
         return 0;
     }
 
     float aa = 0, ba = 0, bb = 0, cb = 0, cc = 0, dc = 0, dd = 0, df = 0, ff = 0;
 
-    int harfSayýsý[9] = { aa, ba, bb, cb, cc, dc, dd, df, ff };
+    int harfSayÄ±sÄ±[9] = { aa, ba, bb, cb, cc, dc, dd, df, ff };
 
     // const int sabitogr = ogrenciSayisi;
-    float tumfinalNotlar[500] = {}; // 1- Dizi boyutunu sabit bir deðiþkenle(örn; bir üstteki deðiþken) deðiþtiremediðim için,2-
-    int sayac = 0;                  // 2- yeterince büyük bir dizi oluþturdum
+    float tumfinalNotlar[500] = {}; // 1- Dizi boyutunu sabit bir deÄŸiÅŸkenle(Ã¶rn; bir Ã¼stteki deÄŸiÅŸken) deÄŸiÅŸtiremediÄŸim iÃ§in,2-
+    int sayac = 0;                  // 2- yeterince bÃ¼yÃ¼k bir dizi oluÅŸturdum
     float toplam = 0;
     float toplamNot = 0;
 
     int i = 0;
     ogrenciler ogrenci;
-    // Rastgele bir þekilde isim ve notlarý belirleyen ve final notunu da hesaplayýp yazdýran döngü
+    // Rastgele bir ÅŸekilde isim ve notlarÄ± belirleyen ve final notunu da hesaplayÄ±p yazdÄ±ran dÃ¶ngÃ¼
     do
     {
         const int ogrs = ogrenciSayisi;
         int rastgeleSayi = rand() % ogrs;
                                  
-        // Struct yapýsýna rastgele öðrenci ve notlarý eklendi
+        // Struct yapÄ±sÄ±na rastgele Ã¶ÄŸrenci ve notlarÄ± eklendi
         ogrenci.isim = studentNameS[rastgeleSayi];
         ogrenci.soyad = studentSurnameS[rastgeleSayi];
         ogrenci.quiz1 = rastgeleNotlar();
@@ -178,7 +161,7 @@ int main()
         ogrenci.final = rastgeleNotlar();
 
 
-        // öðrencinin notu ve harf karþýlýðý belirlendi
+        // Ã¶ÄŸrencinin notu ve harf karÅŸÄ±lÄ±ÄŸÄ± belirlendi
         float toplamQuizNotu = (ogrenci.quiz1 + ogrenci.quiz2) * quizNotAgirligi / 100;
         float toplamOdevNotu = (ogrenci.odev1 + ogrenci.odev2) * odevNotAgirligi / 100;
         float vizeNotu = ogrenci.vize * vizeNotAgirligi / 100;
@@ -186,86 +169,86 @@ int main()
         float finalNotu = ogrenci.final * finalNotAgirligi / 100;
 
         ogrenci.finalNot = yilIciNot + finalNotu;
-        // Oluþturulan final notu tüm final notlarýnýn olacaðý diziye eklendi
+        // OluÅŸturulan final notu tÃ¼m final notlarÄ±nÄ±n olacaÄŸÄ± diziye eklendi
         tumfinalNotlar[sayac] = ogrenci.finalNot;
         sayac++;
-        // Ortalama hesaplamak için final notlarý toplandý
+        // Ortalama hesaplamak iÃ§in final notlarÄ± toplandÄ±
         toplam += ogrenci.finalNot;
 
-        // Öðrencinin notuna göre harf karþýlýðý yazdýrýldý ve hangi harften kaç tane alýndýðýný-
-        // -hesaplamak için harfSayýsý adlý dizinin elemanlarý arttýrýldý
+        // Ã–ÄŸrencinin notuna gÃ¶re harf karÅŸÄ±lÄ±ÄŸÄ± yazdÄ±rÄ±ldÄ± ve hangi harften kaÃ§ tane alÄ±ndÄ±ÄŸÄ±nÄ±-
+        // -hesaplamak iÃ§in harfSayÄ±sÄ± adlÄ± dizinin elemanlarÄ± arttÄ±rÄ±ldÄ±
         toplamNot = ogrenci.finalNot;
-        cout << "Sayýn " << ogrenci.isim + " " + ogrenci.soyad << ".  Yýl sonu notunuz: " << toplamNot << ".  Notunuzun harf karþýlýðý: ";
+        cout << "SayÄ±n " << ogrenci.isim + " " + ogrenci.soyad << ".  YÄ±l sonu notunuz: " << toplamNot << ".  Notunuzun harf karÅŸÄ±lÄ±ÄŸÄ±: ";
 
         if (toplamNot >= 90.00 && toplamNot <= 100)
         {
             cout << "AA\n\n";
-            harfSayýsý[0]++;
+            harfSayÄ±sÄ±[0]++;
             i++;
         }
         else if (toplamNot >= 85.00 && toplamNot < 90)
         {
             cout << "BA\n\n";
-            harfSayýsý[1]++;
+            harfSayÄ±sÄ±[1]++;
             i++;
         }
         else if (toplamNot >= 80.00 && toplamNot < 85)
         {
             cout << "BB\n\n";
-            harfSayýsý[2]++;
+            harfSayÄ±sÄ±[2]++;
             i++;
         }
         else if (toplamNot >= 75.00 && toplamNot < 80)
         {
             cout << "CB\n\n";
-            harfSayýsý[3]++;
+            harfSayÄ±sÄ±[3]++;
             i++;
         }
         else if (toplamNot >= 65.00 && toplamNot < 75)
         {
             cout << "CC\n\n";
-            harfSayýsý[4]++;
+            harfSayÄ±sÄ±[4]++;
             i++;
         }
         else if (toplamNot >= 58.00 && toplamNot <= 65)
         {
             cout << "DC\n\n";
-            harfSayýsý[5]++;
+            harfSayÄ±sÄ±[5]++;
             i++;
         }
         else if (toplamNot >= 50.00 && toplamNot <= 58)
         {
             cout << "DD\n\n";
-            harfSayýsý[6]++;
+            harfSayÄ±sÄ±[6]++;
             i++;
         }
         else if (toplamNot >= 40.00 && toplamNot <= 50)
         {
             cout << "FD\n\n";
-            harfSayýsý[7]++;
+            harfSayÄ±sÄ±[7]++;
             i++;
         }
         else if (toplamNot >= 0 && toplamNot <= 40)
         {
             cout << "FF\n\n";
-            harfSayýsý[8]++;
+            harfSayÄ±sÄ±[8]++;
             i++;
         }
         else
         {
-            cout << "Notunuz belirlenemedi. Sebebini bulamadýk. Eksik veya hatalý giriþ yaptýðýnýzý düþünüyorsanýz lütfen tekrar deneyiniz.\n";
+            cout << "Notunuz belirlenemedi. Sebebini bulamadÄ±k. Eksik veya hatalÄ± giriÅŸ yaptÄ±ÄŸÄ±nÄ±zÄ± dÃ¼ÅŸÃ¼nÃ¼yorsanÄ±z lÃ¼tfen tekrar deneyiniz.\n";
             break;
         }
 
         string harfler[9] = { "AA", "BA", "BB", "CB", "CC", "DC", "DD", "DF", "FF" };
 
-        // Hangi harf notunu kaç kiþinin aldýðýný ve sýnýfa göre yüzdesini gösteren döngü
+        // Hangi harf notunu kaÃ§ kiÅŸinin aldÄ±ÄŸÄ±nÄ± ve sÄ±nÄ±fa gÃ¶re yÃ¼zdesini gÃ¶steren dÃ¶ngÃ¼
         if (i == ogrenciSayisi)
         {
             for (int a = 0; a < 9; a++)
             {
-                cout << harfler[a] << " notunu  alan kiþi sayýsý: " << harfSayýsý[a] << endl;
-                cout << "Sýnýfa göre yüzdesi: %" << (float)harfSayýsý[a]/ogrenciSayisi * 100 << endl;
+                cout << harfler[a] << " notunu  alan kiÅŸi sayÄ±sÄ±: " << harfSayÄ±sÄ±[a] << endl;
+                cout << "SÄ±nÄ±fa gÃ¶re yÃ¼zdesi: %" << (float)harfSayÄ±sÄ±[a]/ogrenciSayisi * 100 << endl;
             }
         }
 
@@ -273,24 +256,24 @@ int main()
     cout << endl;
     cout << endl;
 
-    // Sýnýf ortalamasý yazdýrýldý
-    float sýnýfort = toplam / ogrenciSayisi;
-    cout << "Sýnýf ortalamasý: " << sýnýfort << endl;
+    // SÄ±nÄ±f ortalamasÄ± yazdÄ±rÄ±ldÄ±
+    float sÄ±nÄ±fort = toplam / ogrenciSayisi;
+    cout << "SÄ±nÄ±f ortalamasÄ±: " << sÄ±nÄ±fort << endl;
 
     
     float fark = 0;
-    // Standart sapma yazdýrýldý
+    // Standart sapma yazdÄ±rÄ±ldÄ±
     for (int i = 0; i < ogrenciSayisi; i++)
     {
-        fark += pow(tumfinalNotlar[i] - sýnýfort,2);
+        fark += pow(tumfinalNotlar[i] - sÄ±nÄ±fort,2);
     }
     float standartSapma = sqrt(fark / (ogrenciSayisi-1));
-    cout << "Sýnýfýn standart sapmasý: " << standartSapma << endl;
+    cout << "SÄ±nÄ±fÄ±n standart sapmasÄ±: " << standartSapma << endl;
 
 
     float enbuyuk = tumfinalNotlar[0];
     float enkucuk = tumfinalNotlar[0];
-    // En düþük ve en yüksek notu belirleyen döngü
+    // En dÃ¼ÅŸÃ¼k ve en yÃ¼ksek notu belirleyen dÃ¶ngÃ¼
     for (int i = 0; i < ogrenciSayisi; i++)
     {
         if (tumfinalNotlar[i] < enkucuk)
@@ -302,12 +285,12 @@ int main()
             enbuyuk = tumfinalNotlar[i];
         }
     }
-    cout << "Sýnýfýn en düþük notu: " << enkucuk << endl;
-    cout << "Sýnýfýn en yuksek notu: " << enbuyuk << endl;
+    cout << "SÄ±nÄ±fÄ±n en dÃ¼ÅŸÃ¼k notu: " << enkucuk << endl;
+    cout << "SÄ±nÄ±fÄ±n en yuksek notu: " << enbuyuk << endl;
 }
 
 
-// 6 farklý notu yüzdesel aralýklarýna göre rastgele oluþturan fonksiyon
+// 6 farklÄ± notu yÃ¼zdesel aralÄ±klarÄ±na gÃ¶re rastgele oluÅŸturan fonksiyon
 int rastgeleNotlar()
 {
     int rastgele = rand() % 11;
